@@ -1,78 +1,397 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NestifyBD - Coming Soon</title>
+    <meta name="description" content="NestifyBD - Find your dream home in Bangladesh. Buy, rent, or list properties in Dhaka and beyond. Trusted real estate platform.">
+    <title>NestifyBD - Find Your Dream Home in Bangladesh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">NestifyBD</a>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <img src="assets/logo.png" alt="NestifyBD" class="navbar-logo">
+                <span class="d-none d-md-inline">Nestify<span class="brand-accent">BD</span></span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#home">হোম</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">আমাদের সম্পর্কে</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">যোগাযোগ</a></li>
+                <ul class="navbar-nav align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#areas">Areas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-primary btn-nav rounded-pill px-4" href="#contact">List Your Property</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section min-vh-100 d-flex align-items-center">
-        <div class="container text-center text-white">
-            <h1 class="display-3 fw-bold mb-3">NestifyBD</h1>
-            <p class="lead mb-4">আমরা শীঘ্রই আসছি। আপনার সহযোগিতার জন্য ধন্যবাদ।</p>
-            <a href="#contact" class="btn btn-primary btn-lg px-4">যোগাযোগ করুন</a>
+    <section id="home" class="hero" aria-label="Hero">
+        <div class="hero-bg">
+            <div class="hero-bg-image" role="img" aria-hidden="true"></div>
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-bg-noise"></div>
+        </div>
+        <div class="container position-relative">
+            <div class="hero-content text-center">
+                <span class="hero-badge animate-fade-in">Bangladesh's Trusted Real Estate Platform</span>
+                <h1 class="hero-title animate-fade-in animate-delay-1">
+                    Find Your <span class="text-highlight">Dream Home</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-in animate-delay-2">Buy, rent, or invest in verified properties across Dhaka and beyond. Your next chapter starts here.</p>
+                <div class="search-box animate-fade-in animate-delay-3">
+                    <div class="search-tabs">
+                        <button type="button" class="search-tab active" aria-pressed="true">Buy</button>
+                        <button type="button" class="search-tab" aria-pressed="false">Rent</button>
+                    </div>
+                    <div class="search-fields">
+                        <div class="search-field">
+                            <span class="search-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
+                            <input type="text" placeholder="Location (e.g. Gulshan, Dhanmondi)" class="form-control" aria-label="Search by location">
+                        </div>
+                        <div class="search-field">
+                            <span class="search-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </span>
+                            <select class="form-select" aria-label="Property type">
+                                <option value="">Property Type</option>
+                                <option>Apartment</option>
+                                <option>House</option>
+                                <option>Commercial</option>
+                                <option>Land</option>
+                            </select>
+                        </div>
+                        <div class="search-field">
+                            <span class="search-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </span>
+                            <select class="form-select" aria-label="Budget">
+                                <option value="">Budget</option>
+                                <option>Under 50 Lac</option>
+                                <option>50 Lac - 1 Crore</option>
+                                <option>1 - 2 Crore</option>
+                                <option>2 Crore+</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-search rounded-pill">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+            <a href="#properties" class="scroll-link"><span></span>Explore</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">আমাদের সম্পর্কে</h2>
-                    <p class="lead text-muted">
-                        NestifyBD আপনার বিশ্বস্ত প্ল্যাটফর্ম। আমরা শীঘ্রই আমাদের সেবা নিয়ে হাজির হব।
-                    </p>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="rounded-circle bg-primary d-inline-flex align-items-center justify-content-center text-white display-4 fw-bold" style="width: 200px; height: 200px;">N</div>
+    <!-- Stats Bar -->
+    <section class="stats-bar" aria-label="Statistics">
+        <div class="container">
+            <div class="stats-inner">
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number" data-value="500">500+</div>
+                        <div class="stat-label">Properties Listed</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number" data-value="2000">2K+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number" data-value="15">15+</div>
+                        <div class="stat-label">Areas Covered</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number" data-value="10">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container py-5">
-            <h2 class="text-center fw-bold mb-5">যোগাযোগ করুন</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <p class="text-center text-muted">
-                        ইমেইল: <a href="mailto:info@nestifybd.com">info@nestifybd.com</a><br>
-                        ওয়েবসাইট: nestifybd.com
-                    </p>
+    <!-- Property Types -->
+    <section class="section section-types" id="types" aria-labelledby="types-heading">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label reveal">What we offer</span>
+                <h2 id="types-heading" class="section-title reveal">Property Types</h2>
+                <p class="section-desc reveal">Whether you're buying, renting, or investing—we've got you covered.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
+                    <a href="#properties" class="type-card reveal">
+                        <span class="type-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </span>
+                        <h3 class="type-name">Apartments</h3>
+                        <p class="type-desc">Modern flats & apartments</p>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#properties" class="type-card reveal">
+                        <span class="type-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </span>
+                        <h3 class="type-name">Houses</h3>
+                        <p class="type-desc">Independent homes & villas</p>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#properties" class="type-card reveal">
+                        <span class="type-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </span>
+                        <h3 class="type-name">Commercial</h3>
+                        <p class="type-desc">Shops, offices & more</p>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#properties" class="type-card reveal">
+                        <span class="type-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.5A8 8 0 0 1 12 2a8 8 0 0 1 8 8.5C20 17.5 12 22 12 22z"/></svg>
+                        </span>
+                        <h3 class="type-name">Land</h3>
+                        <p class="type-desc">Plots & land for sale</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="section section-properties" aria-labelledby="properties-heading">
+        <div class="container">
+            <div class="section-header d-flex flex-wrap justify-content-between align-items-end gap-3">
+                <div>
+                    <span class="section-label reveal">Featured</span>
+                    <h2 id="properties-heading" class="section-title mb-0 reveal">Latest Listings</h2>
+                </div>
+                <a href="#contact" class="btn btn-outline-primary rounded-pill reveal">View All Properties</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <article class="property-card reveal">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop" alt="Luxury apartment in Gulshan" loading="lazy">
+                            <span class="property-badge">For Sale</span>
+                            <div class="property-image-overlay"></div>
+                            <div class="property-actions">
+                                <button type="button" class="property-action" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+                                <button type="button" class="property-action" aria-label="Share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-price">৳ 1.2 Crore</div>
+                            <h3 class="property-title">Luxury 3BHK Apartment, Gulshan-2</h3>
+                            <p class="property-location">Gulshan 2, Dhaka</p>
+                            <ul class="property-features">
+                                <li><span class="prop-feat-icon">🛏</span> 3 Beds</li>
+                                <li><span class="prop-feat-icon">🛁</span> 3 Baths</li>
+                                <li><span class="prop-feat-icon">▢</span> 2,200 sqft</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="property-card reveal">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop" alt="Modern house Dhanmondi" loading="lazy">
+                            <span class="property-badge rent">For Rent</span>
+                            <div class="property-image-overlay"></div>
+                            <div class="property-actions">
+                                <button type="button" class="property-action" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+                                <button type="button" class="property-action" aria-label="Share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-price">৳ 85,000 <span class="property-price-unit">/ mo</span></div>
+                            <h3 class="property-title">Spacious House with Garden, Dhanmondi</h3>
+                            <p class="property-location">Dhanmondi, Dhaka</p>
+                            <ul class="property-features">
+                                <li><span class="prop-feat-icon">🛏</span> 4 Beds</li>
+                                <li><span class="prop-feat-icon">🛁</span> 4 Baths</li>
+                                <li><span class="prop-feat-icon">▢</span> 3,500 sqft</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="property-card reveal">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" alt="Premium Villa Banani" loading="lazy">
+                            <span class="property-badge">For Sale</span>
+                            <div class="property-image-overlay"></div>
+                            <div class="property-actions">
+                                <button type="button" class="property-action" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+                                <button type="button" class="property-action" aria-label="Share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="property-body">
+                            <div class="property-price">৳ 3.5 Crore</div>
+                            <h3 class="property-title">Premium Villa, Banani</h3>
+                            <p class="property-location">Banani, Dhaka</p>
+                            <ul class="property-features">
+                                <li><span class="prop-feat-icon">🛏</span> 5 Beds</li>
+                                <li><span class="prop-feat-icon">🛁</span> 5 Baths</li>
+                                <li><span class="prop-feat-icon">▢</span> 5,000 sqft</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section-about" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="section-label reveal">About NestifyBD</span>
+                    <h2 id="about-heading" class="section-title reveal">Your Trusted Partner in Real Estate</h2>
+                    <p class="section-text reveal">We connect buyers, renters, and investors with verified properties across Bangladesh. From first-time homebuyers to seasoned investors, we make the journey simple, transparent, and stress-free.</p>
+                    <ul class="about-list reveal">
+                        <li>Verified listings with real photos & details</li>
+                        <li>Expert agents ready to help you</li>
+                        <li>Transparent pricing—no hidden fees</li>
+                        <li>Support from search to keys in hand</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary rounded-pill px-4 py-3 btn-glow reveal">Get in Touch</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image-wrap reveal">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Modern living space" class="about-image" loading="lazy">
+                        <div class="about-badge">
+                            <span class="about-badge-num">10+</span>
+                            <span class="about-badge-text">Years of Trust</span>
+                        </div>
+                        <div class="about-frame" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas We Serve -->
+    <section id="areas" class="section section-areas" aria-labelledby="areas-heading">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label reveal">Coverage</span>
+                <h2 id="areas-heading" class="section-title reveal">Popular Areas</h2>
+                <p class="section-desc reveal">Find properties in the most sought-after locations in Dhaka and beyond.</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2"><a href="#properties" class="area-card reveal"><span>Gulshan</span></a></div>
+                <div class="col-6 col-md-4 col-lg-2"><a href="#properties" class="area-card reveal"><span>Dhanmondi</span></a></div>
+                <div class="col-6 col-md-4 col-lg-2"><a href="#properties" class="area-card reveal"><span>Banani</span></a></div>
+                <div class="col-6 col-md-4 col-lg-2"><a href="#properties" class="area-card reveal"><span>Baridhara</span></a></div>
+                <div class="col-6 col-md-4 col-lg-2"><a href="#properties" class="area-card reveal"><span>Uttara</span></a></div>
+                <div class="col-6 col-md-4 col-lg-2"><a href="#properties" class="area-card reveal"><span>Mirpur</span></a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-bg-pattern" aria-hidden="true"></div>
+                <h2 class="cta-title reveal">Ready to List Your Property?</h2>
+                <p class="cta-text reveal">Join thousands of satisfied clients. List your property with NestifyBD and reach serious buyers and tenants.</p>
+                <div class="cta-buttons reveal">
+                    <a href="#contact" class="btn btn-light btn-lg rounded-pill px-4 btn-cta-primary">List Your Property</a>
+                    <a href="mailto:info@nestifybd.com" class="btn btn-outline-light btn-lg rounded-pill px-4">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label reveal">Get in touch</span>
+                <h2 id="contact-heading" class="section-title reveal">Contact Us</h2>
+                <p class="section-desc reveal">Have questions or want to list a property? We're here to help.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <a href="mailto:info@nestifybd.com" class="contact-card reveal">
+                        <span class="contact-icon-wrap"><span class="contact-icon">✉</span></span>
+                        <h3 class="contact-title">Email</h3>
+                        <p class="contact-value">info@nestifybd.com</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a href="tel:+8801700000000" class="contact-card reveal">
+                        <span class="contact-icon-wrap"><span class="contact-icon">📞</span></span>
+                        <h3 class="contact-title">Phone</h3>
+                        <p class="contact-value">+880 1700-000000</p>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="contact-card reveal">
+                        <span class="contact-icon-wrap"><span class="contact-icon">🌐</span></span>
+                        <h3 class="contact-title">Website</h3>
+                        <p class="contact-value">nestifybd.com</p>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2025 NestifyBD. সর্বস্বত্ব সংরক্ষিত।</p>
+    <footer class="footer" role="contentinfo">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <a href="#home" class="footer-brand d-flex align-items-center gap-2">
+                    <img src="assets/logo.png" alt="NestifyBD" class="footer-logo">
+                    <span>Nestify<span class="brand-accent">BD</span></span>
+                </a>
+                    <p class="footer-tagline">Your trusted real estate partner in Bangladesh. Find, buy, or rent with confidence.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4 class="footer-heading">Property</h4>
+                    <ul class="footer-links">
+                        <li><a href="#properties">Buy</a></li>
+                        <li><a href="#properties">Rent</a></li>
+                        <li><a href="#contact">List Property</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-contact">info@nestifybd.com<br>nestifybd.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5 pt-4">
+                <p class="mb-0">&copy; 2025 NestifyBD. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
